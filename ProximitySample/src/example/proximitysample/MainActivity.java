@@ -35,12 +35,12 @@ public class MainActivity extends Activity implements SensorEventListener {
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
-		Toast.makeText(MainActivity.this, "�ڋ߁I", Toast.LENGTH_SHORT).show();
-
 		float[] values = event.values;
 		TextView text = (TextView) findViewById(R.id.Proximity);
-
 		text.setText(String.valueOf(values[0]));
+		
+		if(values[0]==0.0)
+		Toast.makeText(MainActivity.this, "�ڋ߁I", Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
